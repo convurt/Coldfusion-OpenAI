@@ -15,3 +15,15 @@ Text completions with Davinici: use this format to call the API and return the m
   total_tokens = message.total_tokens;
 </cfscript>
 ```
+
+Chat completions with ChatGPT: use this format to call the API and return the message and total_tokens (if you are monitoring tokens).
+
+```coldfusion
+<cfscript>
+  //call the function and use in your code, only the prompt is required, the role sets the system type
+  message = createObject('component', 'openai.chat').aiChat(prompt='This is a test prompt.', role='marketing assistant');
+  //set variables and use them as needed
+  completion = message.completion;
+  total_tokens = message.total_tokens;
+</cfscript>
+```
