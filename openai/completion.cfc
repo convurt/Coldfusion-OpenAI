@@ -1,12 +1,14 @@
 component {
 
+  // This model is being depreciated, check the OpenAI documentation https://platform.openai.com/docs/guides/text-generation/completions-api
   OPENAI_API_KEY = "YOUR_API_KEY_HERE";
+  INSTRUCT_MODEL = "gpt-3.5-turbo-instruct";
 
 // adjust the default setting here or adjust them on the fly in your function call
   function aiCaption(prompt='', temperature=0.7, max_tokens=250, top_p=0.8, frequency_penalty=0, presence_penalty=0.0) {
 
     data = {
-      "model": "text-davinci-003",
+      "model": INSTRUCT_MODEL,
       "prompt": prompt,
       "temperature": temperature,
       "max_tokens": max_tokens,
